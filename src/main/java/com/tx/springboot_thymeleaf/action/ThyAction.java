@@ -22,7 +22,7 @@ public class ThyAction {
     }
     @PostMapping("login")
     public String login(String code,String pwd) {
-        System.out.println(code);
+
         return "menu";
     }
 }
