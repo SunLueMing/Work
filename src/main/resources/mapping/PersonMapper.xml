@@ -5,10 +5,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.tx.springboot_thymeleaf.dao.IThyDao">
-<select id="Sel" resultType="goods">
-SELECT * FROM `goods`
-</select>
-<delete id="del">
-    DELETE FROM `goods` WHERE `goodsid` = #{num}
-</delete>
+    <select id="selUserName" resultType="student">
+        select * from t_student where code =#{code} and pwd =#{pwd}
+    </select>
 </mapper>    

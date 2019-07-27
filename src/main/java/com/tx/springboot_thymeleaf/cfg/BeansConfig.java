@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import com.github.pagehelper.PageHelper;
 
 @Configuration
-@MapperScan(basePackages = { "com.tx.springboot_1.dao" })
+@MapperScan(basePackages = { "com.tx.springboot_thymeleaf.dao" })
 public class BeansConfig {
 	
 	
