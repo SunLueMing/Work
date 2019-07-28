@@ -59,7 +59,11 @@ public class ThyAction {
 
     @RequestMapping("delRecord")
     public String delRecord(Integer did) {
-
+        iBiz.delRecord(did);
         return "redirect:recordList";
+    }
+    @RequestMapping("toaddRecord")
+    public String toaddRecord() {
+        return "addRecord";
     }
 }

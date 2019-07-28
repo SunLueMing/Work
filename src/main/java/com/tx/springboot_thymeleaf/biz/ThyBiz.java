@@ -46,4 +46,9 @@ public class ThyBiz {
     public List<Record> selAllRecord(){
         return thyDao.selAllRecord();
     }
+
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = false)
+    public Integer delRecord(@Param("did") Integer did){
+        return thyDao.delRecord(did);
+    }
 }
