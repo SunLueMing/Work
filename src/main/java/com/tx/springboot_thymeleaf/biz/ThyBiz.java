@@ -1,6 +1,7 @@
 package com.tx.springboot_thymeleaf.biz;
 
 import com.tx.springboot_thymeleaf.dao.IThyDao;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
@@ -19,5 +20,10 @@ import javax.annotation.Resource;
 public class ThyBiz {
     @Resource
     private IThyDao thyDao;
+
+    @Transactional(propagation = Propagation.SUPPORTS, isolation = Isolation.READ_COMMITTED, readOnly = true)
+    public String selUserName( String name, String pwd){
+        return thyDao.selUserName(name,pwd);
+    }
 
 }
