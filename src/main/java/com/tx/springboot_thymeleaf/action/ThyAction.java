@@ -48,7 +48,18 @@ public class ThyAction {
     }
     @RequestMapping("selSomeStu")
     public String selSomeStu(Model model,Integer id) {
-        System.out.println(id);
+       model.addAttribute("recList",iBiz.selRecByStu(id));
         return "stuDetails";
+    }
+    @RequestMapping("recordList")
+    public String recordList(Model model) {
+        model.addAttribute("list",iBiz.selAllRecord());
+        return "recordList";
+    }
+
+    @RequestMapping("delRecord")
+    public String delRecord(Integer did) {
+
+        return "redirect:recordList";
     }
 }

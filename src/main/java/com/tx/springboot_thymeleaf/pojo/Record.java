@@ -15,6 +15,15 @@ public class Record {
     private String createBy;
     private String des;
     private String rewards;
+    private String stuname;
+
+    public String getStuname() {
+        return stuname;
+    }
+
+    public void setStuname(String stuname) {
+        this.stuname = stuname;
+    }
 
     public String getRewards() {
         return rewards;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,18 +14,24 @@
         <th>奖惩</th>
         <th>学生姓名</th>
         <th>创建人</th>
-        <th>描述</th>
+        <th>创建时间</th>
+        <th>操作</th>
     </tr>
     </thead>
     <tbody>
-        <tr th:each="obj,iterStat:${recList}">
+        <tr th:each="obj,iterStat:${list}">
             <td th:text="${iterStat.index}"></td>
             <td th:text="${obj.rewards}"></td>
             <td th:text="${obj.stuname}"></td>
             <td th:text="${obj.createBy}"></td>
-            <td th:text="${obj.des}"></td>
+            <td th:text="${#dates.format(obj.createDate, 'yyyy-MM-dd')}"></td>
+            <td><a class="del" th:href="@{/c/delRecord(did=${obj.id})}">删除</a></td>
         </tr>
     </tbody>
 </table>
 </body>
+<script src="../static/js/jquery-1.12.4.js"></script>
+<script>
+
+</script>
 </html>

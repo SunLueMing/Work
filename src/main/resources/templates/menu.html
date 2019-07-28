@@ -12,7 +12,7 @@
 <br>
 <div style="border: 1px solid;">
     <a href="" id="stulist">学生列表</a>
-    <a href="">奖惩列表</a>
+    <a href="" id="recordlist">奖惩列表</a>
     <a href="">退出系统</a>
 </div>
 <br>
@@ -22,6 +22,10 @@
 <script>
     $("#stulist").click(function () {
         $("iframe").attr("src","/c/stuList?fir=1");
+        return false;
+    })
+    $("#recordlist").click(function () {
+        $("iframe").attr("src","/c/recordList");
         return false;
     })
 </script>

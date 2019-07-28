@@ -3,6 +3,7 @@ package com.tx.springboot_thymeleaf.biz;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.tx.springboot_thymeleaf.dao.IThyDao;
+import com.tx.springboot_thymeleaf.pojo.Record;
 import com.tx.springboot_thymeleaf.pojo.Student;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
@@ -34,5 +35,15 @@ public class ThyBiz {
     public PageInfo<Student> selAllStu(Integer fir, Integer sec){
         PageHelper.startPage(fir, sec);
         return new PageInfo<>(thyDao.selAllStu());
+    }
+
+
+    @Transactional(propagation = Propagation.SUPPORTS, isolation = Isolation.READ_COMMITTED, readOnly = true)
+    public List<Record> selRecByStu(Integer stuid){
+        return thyDao.selRecByStu(stuid);
+    }
+    @Transactional(propagation = Propagation.SUPPORTS, isolation = Isolation.READ_COMMITTED, readOnly = true)
+    public List<Record> selAllRecord(){
+        return thyDao.selAllRecord();
     }
 }

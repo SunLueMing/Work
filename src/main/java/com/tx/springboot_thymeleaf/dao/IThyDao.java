@@ -14,5 +14,7 @@ import java.util.List;
 public interface IThyDao {
     public String selUserName(@Param("code") String name,@Param("pwd") String pwd);
     public List<Student> selAllStu();
-    public List<Record> selRecByStu();
+    public List<Record> selRecByStu(@Param("id") Integer stuid);
+    public List<Record> selAllRecord();
+    public Integer delRecord(@Param("did") Integer did);
 }
