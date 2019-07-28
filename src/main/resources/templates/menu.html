@@ -7,7 +7,22 @@
 </head>
 <body>
 <div style="border: 1px solid">
-<h3>学生奖惩管理系统|欢迎你[[${loginname}]]</h3>
+    <h3>学生奖惩管理系统|欢迎你<span style="color: red">[[${loginname}]]</span></h3>
 </div>
+<br>
+<div style="border: 1px solid;">
+    <a href="" id="stulist">学生列表</a>
+    <a href="">奖惩列表</a>
+    <a href="">退出系统</a>
+</div>
+<br>
+<iframe width="1100px" height="500px" src=""></iframe>
 </body>
+<script src="../static/js/jquery-1.12.4.js"></script>
+<script>
+    $("#stulist").click(function () {
+        $("iframe").attr("src","/c/stuList?fir=1");
+        return false;
+    })
+</script>
 </html>

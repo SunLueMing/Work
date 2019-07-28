@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>学生信息</h1>
+<table style="border:1px solid #0094ff;">
+    <thead>
+    <tr>
+    <th>学号</th>
+    <th>姓名</th>
+    <th>职务</th>
+    <th>专业</th>
+    <th>班级</th>
+    <th>性别</th>
+    <th>生日</th>
+    <th>电话</th>
+    <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="obj,iterStat:${list.getList()}">
+        <td th:text="${obj.id}"></td>
+        <td th:text="${obj.name}"></td>
+        <td th:if="${obj.job}==1">普通学生</td>
+        <td th:if="${obj.job}==2">组长</td>
+        <td th:if="${obj.job}==3">班长</td>
+        <td th:if="${obj.major}=='1'">计算机</td>
+        <td th:if="${obj.major}=='2'">电气</td>
+        <td th:if="${obj.major}=='3'">金融</td>
+        <td th:text="${obj.grade}"></td>
+        <td th:if=" ${obj.sex} == '1'">男</td>
+        <td th:if=" ${obj.sex} == '2'">女</td>
+        <td th:text="${#dates.format(obj.birthday, 'yyyy-MM-dd')}"></td>
+        <td th:text="${obj.tel}"></td>
+        <td><a href="" class="a1" th:href="@{/c/selSomeStu(id=${obj.id})}">查看</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/c/stuList(fir=${list.getFirstPage()})}">首页</a>
+<a th:href="@{/c/stuList(fir=${list.getPrePage()})}">上一页</a>
+<a th:href="@{/c/stuList(fir=${list.getNextPage()})}">下一页</a>
+<a th:href="@{/c/stuList(fir=${list.getLastPage()})}">尾页</a>
+</body>
+<script src="../static/js/jquery-1.12.4.js"></script>
+<script>
+</script>
+</html>

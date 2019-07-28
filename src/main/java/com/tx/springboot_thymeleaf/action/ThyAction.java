@@ -23,6 +23,7 @@ public class ThyAction {
     @Resource
     private ThyBiz iBiz;
     String stuName ;
+    Integer sec = 2;
     @RequestMapping("tologin")
     public String tologin() {
 
@@ -36,7 +37,18 @@ public class ThyAction {
             model.addAttribute("sum", "用户名或密码错误");
             return "login";
         } else {
+            model.addAttribute("loginname",stuName);
             return "menu";
         }
+    }
+    @RequestMapping("stuList")
+    public String stuList(Model model,Integer fir) {
+        model.addAttribute("list",iBiz.selAllStu(fir,sec));
+        return "stuList";
+    }
+    @RequestMapping("selSomeStu")
+    public String selSomeStu(Model model,Integer id) {
+        System.out.println(id);
+        return "stuDetails";
     }
 }

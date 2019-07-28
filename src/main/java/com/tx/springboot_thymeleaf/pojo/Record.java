@@ -14,6 +14,15 @@ public class Record {
     private Date createDate;
     private String createBy;
     private String des;
+    private String rewards;
+
+    public String getRewards() {
+        return rewards;
+    }
+
+    public void setRewards(String rewards) {
+        this.rewards = rewards;
+    }
 
     @Override
     public String toString() {

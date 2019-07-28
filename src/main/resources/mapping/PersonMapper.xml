@@ -8,4 +8,7 @@
     <select id="selUserName" resultType="string">
         select name from t_student where code =#{code} and pwd =#{pwd}
     </select>
+    <select id="selAllStu" resultType="student">
+        SELECT * FROM `t_student`
+    </select>
 </mapper>    

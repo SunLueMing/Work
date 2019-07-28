@@ -1,6 +1,10 @@
 package com.tx.springboot_thymeleaf.dao;
 
+import com.tx.springboot_thymeleaf.pojo.Record;
+import com.tx.springboot_thymeleaf.pojo.Student;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @description:
@@ -9,4 +13,6 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface IThyDao {
     public String selUserName(@Param("code") String name,@Param("pwd") String pwd);
+    public List<Student> selAllStu();
+    public List<Record> selRecByStu();
 }
